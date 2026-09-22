@@ -1,0 +1,68 @@
+body{
+    display:flex;
+    flex-direction: column;
+    gap:5dvh;   
+    justify-content: center;
+    align-items: center;
+}
+
+#gameSec{
+    display: flex;
+    gap:10%;
+    min-width: 40dvw;
+    width:55dvw;
+    height:60dvh;
+    display: grid;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.grid{
+    width:60%;
+    height:100%;
+    border-radius:9px;
+    display: grid;
+}
+
+#contWords{
+    background-color: rgb(245, 188, 6);
+    width:55dvw;
+    height:20dvh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3,25%);
+    border-radius: 15px;
+    div{
+        gap:12px;
+    }
+}
+
+.cell{
+    border:solid black 1px;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+
+.menu{
+    width:30%;
+    height:70%;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    gap:10%;
+}
+
+button{
+    color:red;
+    height:40px;
+    width:110px;
+    border-radius: 7px;
+    border:solid black 1px; 
+}
+
+
+
