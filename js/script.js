@@ -48,15 +48,13 @@ let timerInterv
 let words=[]
 
 function timer(){
-  const contSec=document.getElementById('sec')
-    const contMin=document.getElementById('min')
+  let ris
   let s=0
   let m=0
 
   timerInterv=setInterval(()=>{
-    contSec.innerHTML=s>9?s:'0'+s
-    contMin.innerHTML=m
-
+    ris=`${m}:${s>9?s:'0'+s}`
+    document.getElementById('time').innerHTML=ris
     s++
     if(s==59){s=0;m++}
 
@@ -75,7 +73,9 @@ function createLayout(){
     cell.setAttribute('onclick','click()')
     grid.appendChild(cell)
   }
+
   grid.style.gridTemplateColumns=`repeat(${size},10%)`
+  grid.classList.add('disabled')
   container.appendChild(grid)
 
   for(let i=0;i<nWords;i++){
@@ -95,31 +95,22 @@ function createLayout(){
   contMenu.classList.add('menu')
   
   let div=document.createElement('div')
-  let sec=document.createElement('h3')
-  let min=document.createElement('h3')
+  let time=document.createElement('h3')
 
-  sec.id='sec'
-  min.id='min'
-
-  sec.innerHTML="00:"
-  min.innerHTML="00"
-
-  div.appendChild(sec)
-  div.appendChild(min)
+  time.innerHTML="0:00"
+  time.id='time'
+  div.appendChild(time)
 
   let btn=document.createElement('button')
   btn.id='btn'
+  btn.innerHTML='PLAY'
   btn.setAttribute('onclick','play()')
   contMenu.appendChild(div)
   contMenu.appendChild(btn)
 
- // container.appendChild(contMenu)
+ container.appendChild(contMenu)
 
   let text='per ricominciare premere F5 oppure ricaricare la pagina'
-  
-
-
-
   
 }
 
@@ -136,11 +127,12 @@ function generateWords(){
 window.onload=()=>{
   generateWords()
   createLayout()
+    hideWords()
 }
 
 
 function play(){
-  document.getElementsByTagName('button')[0].disabled=true
+  document.getElementById('btn').disabled=true
   timer()
   
 }
@@ -151,14 +143,11 @@ function click(){
 
 function hideWords(){
   const grid=document.getElementsByClassName('cell')
-  const characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
   for(let i=0;i<(size*size);i++){
-    grid[i].innerHTML=characters[Math.floor(Math.random()*characters.length)]
+    grid[i].innerHTML=String.fromCharCode(65+Math.floor(Math.random()*26))
   }
-  const indexes=[]
-  words.forEach(wrd => {
-    let rowIndex=Math.floor(Math.random()*size)
 
-  })
+  
 }
+
 
