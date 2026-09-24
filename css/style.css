@@ -21,10 +21,6 @@ body{
     display: grid;
 }
 
-.grid[disabled="true"]:hover{
-    
-}
-
 .disabled{
     pointer-events: none;
 }

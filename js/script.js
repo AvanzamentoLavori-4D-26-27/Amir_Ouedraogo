@@ -147,7 +147,32 @@ function hideWords(){
     grid[i].innerHTML=String.fromCharCode(65+Math.floor(Math.random()*26))
   }
 
-  
+  for(let  i in words){
+    words[i]={
+      word:words[i],
+      found:false,
+      nFound:0,
+      row:0,
+      start:0,
+      end:0
+    }
+  }
+
+  let r=Math.floor(Math.random()*size)
+  for(let i =0;i<size;i++){
+      if(i==r)continue
+      words[i].row=i
+      words[i].start=Math.floor(Math.random()*(size-words[i].length))
+      words[i].end=start+words[i].length
+  }
+
+  console
+
 }
 
+function checkWords(){
+  grid.forEach(cell => {
+    
+  });
+}
 
