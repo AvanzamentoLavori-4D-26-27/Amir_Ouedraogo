@@ -165,7 +165,7 @@ function hideWords(){
       words[i].start=Math.floor(Math.random()*(size-words[i].length))
       words[i].end=start+words[i].length
   }
-
+  
   console
 
 }

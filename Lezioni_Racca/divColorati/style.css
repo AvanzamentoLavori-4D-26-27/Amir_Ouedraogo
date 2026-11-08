@@ -1,0 +1,17 @@
+  .divCerchio {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: lightgrey;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+  }
+
+  .noClick {
+      pointer-events: none;
+  }
+
+  .disabled{
+    background-color: lightgray;
+    cursor:crosshair;
+  }

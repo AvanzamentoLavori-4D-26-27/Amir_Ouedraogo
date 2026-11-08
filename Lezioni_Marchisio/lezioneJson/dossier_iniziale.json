@@ -1,0 +1,46 @@
+{
+    "caso": "Il quadro scomparso",
+    "oggetto": "La notte stellata",
+    "luogo": "museo civico",
+    "sospetti": [
+        {
+            "nome": "Ada",
+            "alibi": "Era in archivio a riordinare i registri. ",
+            "indizi": [
+                "importanta vicino alla finestra",
+                "conosce il sistema d'allarme"
+            ],
+            "livelloSospetto": 4,
+            "daVerificare": true
+        },
+        {
+            "nome": "Bruno",
+            "alibi": "Era all'ingresso col gruppo di visita. ",
+            "indizi": [
+                "biglietto del museo timbrato alle ore 16:10"
+            ],
+            "livelloSospetto": 1,
+            "daVerificare": false
+        },
+        {
+            "nome": "Cecilia",
+            "alibi": "Dice di essere stata nella sala delle mappe. ",
+            "indizi": [
+                "fibra blu sul guanto",
+                "nessuna conferma alibi"
+            ],
+            "livelloSospetto": 3,
+            "daVerificare": true
+        },
+        {
+            "nome": "Dario",
+            "alibi": "Era nel laboratorio di restauro. ",
+            "indizi": [
+                "registro delle presenze firmato"
+            ],
+            "livelloSospetto": 2,
+            "daVerificare": false
+        }
+    ],
+    "conclusione":"Indagine aperta: gli indizi non bastano ad accusare qualcuno"
+}

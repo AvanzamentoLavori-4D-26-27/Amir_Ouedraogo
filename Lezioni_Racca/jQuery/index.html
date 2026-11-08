@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida pratica a jQuery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Guida pratica a jQuery</h1>
+        <p class="sottotitolo">
+            Esempi pratici per imparare jQuery
+        </p>
+    </header>
+
+    <main>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width*, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Introduzione a jQuery</h1>
+        <p class="sottotitolo">"Write less, do more"</p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Confronto tra Javascript e jQuery</h2>
+            <p>Lo stesso codice scritto in due modi</p>
+            <div class="confronto">
+                <div>
+                <div><h3>Javascript "puro"</h3></div>
+                <pre>
+                    'use strict'
+                    let btn=document.getElementById('btn')
+                    btn.click=()=>{
+                        let p = document.querySelectorAll('p')
+                        for(let i=0;i < p.length;i++){
+                            p[i].style.color='red'
+                        }
+                    }
+                </pre>  
+                </div>
+                <div>
+                    <h3>jQuery</h3>
+                    <pre>
+                        $('#btn').on('click',()=>{
+                            $('p').css('color','red')
+                        })
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Esempio 1: selettori -->
+        <section>
+            <h2>1. Selettori jQuery</h2>
+
+            <p>Seleziona gli elementi della lista.</p>
+
+            <div class="pulsanti">
+                <button id="btnSeleziona">Seleziona il primo</button>
+                <button id="btnTutti">Seleziona tutti</button>
+                <button id="btnReset">Reset</button>
+            </div>
+
+            <ul id="listaFrutta">
+                <li>Mela</li>
+                <li>Pera</li>
+                <li>Banana</li>
+                <li>Arancia</li>
+                <li>Fragola</li>
+            </ul>
+
+            <p id="esitoSelettori" class="esito">
+                Nessun elemento selezionato.
+            </p>
+        </section>
+
+        <!-- Esempio 2: eventi -->
+        <section>
+            <h2>2. Eventi jQuery</h2>
+
+            <p>
+                Passa il mouse sul riquadro oppure cliccalo.
+            </p>
+
+            <div id="boxEventi">
+                Interagisci con me! 
+            </div>
+
+            <p id="messaggioEventi" class="esito">
+                In attesa di un evento.
+            </p>
+        </section>
+        
+        <!-- Esempio 3: CSS e classi -->
+        <section>
+            <h2>3. Modificare CSS e classi</h2>
+
+            <p id="testoCss">
+                Questo testo cambierà aspetto grazie a jQuery.
+            </p>
+
+            <div class="pulsanti">
+                <button id="btnEvidenzia">Evidenzia</button>
+                <button id="btnColore">Cambia colore</button>
+                <button id="btnRipristina">Ripristina</button>
+            </div>
+        </section>
+
+        <!-- Esempio 4: effetti -->
+        <section>
+            <h2>4. Effetti jQuery</h2>
+
+            <div class="pulsanti">
+                <button id="btnNascondi">Nascondi</button>
+                <button id="btnMostra">Mostra</button>
+                <button id="btnDissolvenza">Dissolvenza</button>
+                <button id="btnSlide">Slide</button>
+            </div>
+
+            <div id="boxEffetti">
+                Sono un riquadro con effetti!
+            </div>
+        </section>
+
+        <section id="es5">
+            <h2>5. CHAINING(Concatenazione)</h2>
+            <pre>
+                $("#boxChain")
+                .text("Fatto!")
+                .addClass("evidenziato")
+                .fadeOut(500)
+                .fadeIn(500)
+            </pre>
+            <button id="btnChain">Esegui la catena</button>
+            <div id="boxChain">Premi il pulsante</div>
+        </section>
+    
+
+        <!-- Esempio 5: lista dinamica -->
+        <section>
+            <h2>5. Lista dinamica</h2>
+
+            <p>Aggiungi nuovi elementi alla lista.</p>
+
+            <input
+                type="text"
+                id="nuovoElemento"
+                placeholder="Scrivi un elemento"
+            >
+
+            <button id="btnAggiungi">Aggiungi</button>
+
+            <ul id="listaDinamica">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+            </ul>
+
+            <p class="esito">
+                Clicca su un elemento per rimuoverlo.
+            </p>
+        </section>
+
+        <!-- Esempio 6: concatenazione -->
+        <section>
+            <h2>6. Concatenazione dei metodi</h2>
+
+            <p>
+                Esempio di utilizzo di più metodi jQuery concatenati.
+            </p>
+
+            <button id="btnChain">Esegui animazione</button>
+
+            <div id="boxChain">
+                Effetti concatenati
+            </div>
+        </section>
+
+        <!-- Esempio 7: modifica del testo -->
+        <section>
+            <h2>7. Modificare il testo</h2>
+
+            <p id="testoModificabile">
+                Questo è il testo originale.
+            </p>
+
+            <button id="btnTesto">Cambia testo</button>
+        </section>
+
+        <!-- Esempio 8: paragrafi -->
+        <section>
+            <h2>8. Modificare il colore dei paragrafi</h2>
+
+            <p>Primo paragrafo.</p>
+            <p>Secondo paragrafo.</p>
+            <p>Terzo paragrafo.</p>
+
+            <button id="btn">Colora i paragrafi di rosso</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Guida pratica a jQuery - Esempi didattici</p>
+    </footer>
+
+
+</body>
+</html>

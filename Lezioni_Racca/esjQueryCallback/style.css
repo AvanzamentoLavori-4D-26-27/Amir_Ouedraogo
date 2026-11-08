@@ -1,0 +1,38 @@
+main{
+    display: flex;
+    flex-direction: column;
+    min-width: 80dwh;
+    width:100dvw;
+    height: 60dvh;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width:60dvw;
+    height: 40px;
+    background-color: rgb(85, 85, 199);
+    border-radius: 10px;
+    border:solid grey 1px;
+}
+
+button:hover{
+    transform:scale(1.1);
+    cursor: pointer;
+}
+
+#btnDescrizione{
+    background-color: gray;
+}
+
+#lampadina{
+    width:40dvw;
+    height:30dvh;
+}   
+
+.acceso{
+    background-image: url("lampadina.png");
+    background-color: gold;
+    background-repeat: no-repeat;
+}
