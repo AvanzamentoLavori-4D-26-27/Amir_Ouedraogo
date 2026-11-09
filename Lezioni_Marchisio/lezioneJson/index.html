@@ -1,14 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
     <meta charset="UTF-8">
-    <script src="script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="script.js" defer></script>
+    <title>Esercizio JSON</title>
 </head>
-<body>
-    <button onclick="dati()">
-        clicclami
-    </button>
+
+<body class="bg-light">
+    <main class="container my-4" style="max-width: 720px;">
+        <h1 class="h3 mb-1">Il mistero del quadro scomparso</h1>
+        <p class="text-muted small">Un dossier JSON da leggere, interrogare e aggiornare</p>
+
+        <label for="sorgente" class="form-label fw-semibold">Il dossier (stringa JSON)</label>
+        <textarea id="sorgente" class="form-control font-monospace small mb-2" rows="14" spellcheck="false"></textarea>
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <button id="btnLeggi" class="btn btn-primary btn-sm" onclick="Leggi()">Leggi con JSON.parse</button>
+            <button id="btnEsempioInv" class="btn btn-outline-danger btn-sm">Carica esempio non
+                valido</button>
+            <button id="btnRipristina" class="btn btn-outline-primary btn-sm" ">Ripristina dossier</button>
+        </div>
+
+        <div id="esito" class="alert alert-secondary small">Nessun dossier letto.
+        </div>
+
+        <h2 class="h5 mt-4" id="nomeCaso">Caso non ancora aperto</h2>
+        <p class="small">Oggetto scomparso: <strong id="oggettoScomp">…</strong> · Luogo: <strong id="luogo">…</strong>
+        </p>
+
+        <h2 class="h5 mt-4">Persone da interrogare (<span id="nSospetti"></span>)</h2>
+        <ul id="elenco" class="list-group"></ul>
+
+        <hr class="hr">
+        <h2 class="h5 mb-3">Aggiornare il dossier</h2>
+        <div class="mb-3">
+            <label for="annotazione" class="form-label text-muted small">Annotazione dell'investigatore</label>
+            <div class="d-flex align-items-center gap-2">
+                <input type="text" id="annotazione" class="form-control"
+                    value="Gli indizi portano a pensare che sia cecilia">
+                <button id="btnAggiorna" class="btn btn-success text-nowrap">Aggiorna dossier</button>
+                <button id="btnStringify" class="btn btn-outline-primary text-nowrap">JSON.stringify</button>
+            </div>
+                <textarea id="ris" class="form-control font-monospace small mt-4" rows="1" spellcheck="false" readonly="true"
+                placeholder="Qui apparirà la stringa."
+                ></textarea>
+        </div>
+
+    </main>
 </body>
+
 </html>
